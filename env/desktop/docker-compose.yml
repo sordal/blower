@@ -1,0 +1,21 @@
+version: "2"
+services:
+  blower:
+    image: gcr.io/applegate-road-2829/blower:latest
+    ports:
+      - "443"
+    environment:
+      - "HOST=$DOCKER_IP"
+      - "LOGSTASH_ENABLED=false"
+      - "SERVICE_NAME=blower"
+      - "SERVICE_443_CHECK_HTTPS=/health"
+      - "SERVICE_TAGS=traefik.enable=true"
+
+  registrator:
+    image: gliderlabs/registrator:v7
+    volumes:
+      - "/var/run/docker.sock:/tmp/docker.sock"
+    command: -ip $DOCKER_IP consul://router.applegate.farm:8500
+    network_mode: host
+    logging:
+      driver: none

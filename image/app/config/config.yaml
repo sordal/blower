@@ -1,0 +1,7 @@
+timer:
+  start_time: 9
+  end_time: 18
+  sleep_minutes: 55
+  pin: 4
+  server_port: 9080
+  run_minutes: 5
