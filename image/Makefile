@@ -31,8 +31,8 @@ settings: version
 help: settings
 	@printf "\e[1;34m[INFO] [information]\e[00m\n\n"
 	@echo [INFO] This make process supports the following targets:
-	@echo [INFO]    clean     - (chef, jenkins) clean up and targets in project
-	@echo [INFO]    build     - (chef, jenkins) build both the project and Docker image
+	@echo [INFO]    clean     - Clean up and targets in project
+	@echo [INFO]    build     - Build both the project and Docker image
 	@echo
 	@echo [INFO] The script supports the following parameters:
 	@echo [INFO] 	VERSION - version to tag docker image wth, default value is the git hash
